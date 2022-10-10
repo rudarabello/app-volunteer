@@ -5,7 +5,6 @@ import { useContext, useState, useEffect, useRef } from 'react';
 import styled from "styled-components";
 import Context from "../contexts/Context"
 import Loading from "../components/Loading";
-import TransactionItem from "../components/TransactionItem";
 import { TiDocumentText } from 'react-icons/ti';
 import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
@@ -77,15 +76,7 @@ export default function Home() {
             </Header>
             <TransationArea>
               <Description>
-                {operations.length === 0 ? <Message>Não há registros de entrada ou saída</Message>
-                  : operations.map((e, index) => {
-                    let valueTransaction = e.value;
-                    valueTransaction = valueTransaction.toFixed(2);
-                    valueTransaction = valueTransaction.toString().replace(".", ",");
-                    return (
-                      <TransactionItem
-                        key={index} value={valueTransaction} date={e.date} description={e.description} />);
-                  })}
+                
               </Description>
             </TransationArea>
             <OverBalance>
@@ -185,19 +176,7 @@ const Description = styled.div`
   width: 100%;
   padding-top: 10px;
 `;
-const Message = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: center;
-  width: 180px;
-  color: #868686;
-  margin-left: 70px;
-`;
+
 const Header = styled.div`
   width: 100%;
   display: flex;
