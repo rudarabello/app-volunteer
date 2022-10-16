@@ -31,7 +31,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 background-color: #c4c4c4;
-margin-bottom: 
+position: absolute; 
+left: 0 ; right: 0; bottom: 0;
 
 `;
 const Contact = styled.div`
