@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import VLogo from '../assets/VLogo.png';
+import VLogoComplete from '../assets/VLogoComplete.png';
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
                 <h1>Seja bem-vindo!</h1>
             </TextA>
             <TextB>
-            <img src={VLogo} alt="VLogo" width={300}>
+            <img src={VLogoComplete} alt="VLogo" width={300}>
             </img>
                 <p>
                     Volunteer te ajuda a organizar seu time de voluntários!

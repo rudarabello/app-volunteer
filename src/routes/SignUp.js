@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
-import logo from '../assets/MyWallet.png';
+import logo from '../assets/LogoV.png';
 
 export default function SignUp() {
     const navigate = useNavigate();
@@ -48,7 +48,7 @@ export default function SignUp() {
 
 const Linkto = styled.div`
 margin-top: 38px;
-color: #FFFFFF;
+color: #000000;
 font-size: 14px;
 font-family: "Roboto";
 font-style: normal;
@@ -68,7 +68,7 @@ text-decoration: none !important;
 const StyledCadastro = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: #8C11BE;
+    background-color: #ebf5fe;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,10 +98,15 @@ const StyledCadastro = styled.div`
         width: 100%;
         border: none;
         border-radius: 8px;
-        background-color: #A328D6;
+        background-color: #0a47e0;
         font-size: 14px;
         font-weight: 700;
         color: #FFFFFF;
+        :hover {
+            cursor: pointer;
+            text-decoration: none !important;
+            box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
+            }
     }
 `;
 const Logo = styled.div`
@@ -113,4 +118,9 @@ margin-bottom: 20px;
 img{
     width: 100%;
 }
+:hover {
+    cursor: pointer;
+    text-decoration: none !important;
+    box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
+    }
 `;

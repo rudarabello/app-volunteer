@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import Context from "../contexts/Context";
-import logo from "../assets/MyWallet.png";
+import logo from "../assets/LogoV.png";
 import Loading from "../components/Loading";
 
 
@@ -93,14 +93,13 @@ export default function Login() {
 
 const Linkto = styled.div`
 margin-top: 8px;
-color: #FFFFFF;
+color: #000000;
 font-size: 14px;
 font-family: "Roboto";
 font-style: normal;
 font-weight: 700;
 font-size: 15px;
 line-height: 18px;
-text-decoration: none !important;
 :hover {
     cursor: pointer;
     text-decoration: none !important;
@@ -112,7 +111,7 @@ text-decoration: none !important;
 const StyledLogin = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: #8C11BE;
+    background-color: #ebf5fe;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,10 +130,17 @@ align-items: center;
 max-width: 240px;
 form{
     width: 100%;
-display: flex;
-flex-direction: column;
-gap: 6px;
-margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 25px;
+}
+img{
+    :hover {
+        cursor: pointer;
+        text-decoration: none !important;
+        box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
+        }
 }
 `;
 
@@ -160,7 +166,7 @@ const FormButton = styled.button`
 width: 100%;
 height: 45px;
 border: none;
-background: #A328D6;
+background: #0a47e0;
 border-radius: 8px;
 font-family: 'Roboto';
 font-style: normal;
@@ -169,4 +175,9 @@ font-size: 14px;
 line-height: 16px;
 color: #FFFFFF;
 margin-top: 20px;
+:hover {
+    cursor: pointer;
+    text-decoration: none !important;
+    box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
+    }
 `;
