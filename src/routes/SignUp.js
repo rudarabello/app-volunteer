@@ -9,6 +9,8 @@ export default function SignUp() {
     const API = "https://back-project-mywallet-ruda.herokuapp.com/sign-up";
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [token, setToken] = useState("");
     const [password, setPassword] = useState("");
     const [Cpassword, setCPassword] = useState("");
     function handleSubmit(e) {
@@ -16,6 +18,8 @@ export default function SignUp() {
         const register = {
             email,
             name,
+            phone,
+            token,
             password,
             Cpassword
         };
@@ -34,6 +38,8 @@ export default function SignUp() {
                 <Logo onClick={() => navigate('/')} ><img src={logo} alt="logo" /></Logo>
                 <input type="name" placeholder="Nome " onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
+                <input type="telefone" placeholder="Telefone" onChange={(e) => setPhone(e.target.value)} />
+                <input type="token" placeholder="Token" onChange={(e) => setToken(e.target.value)} />
                 <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirme a senha" onChange={(e) => setCPassword(e.target.value)} />
                 <button type="submit">CADASTRAR</button>
