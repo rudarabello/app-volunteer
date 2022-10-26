@@ -22,7 +22,7 @@ const Container = styled.div`
     height: 100px;
     width: 100%;
     display: flex;
-    background-color: #0a47e0;
+    background-color: rgba(47, 119, 197, 0.8);
     top: 0;
     button{
     min-width: 110px;
