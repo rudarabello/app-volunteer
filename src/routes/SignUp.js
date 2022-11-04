@@ -1,52 +1,73 @@
+import logo from '../assets/LogoV.png';
 import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components";
-import axios from "axios";
 import { useState } from "react";
-import logo from '../assets/LogoV.png';
+import { signUpRequest } from '../services/apiRequests';
+import { isEmpty } from '../utils/isEmpty';
+import { alert } from '../helpers/alert';
+import Loading from "../components/Loading";
 
 export default function SignUp() {
     const navigate = useNavigate();
-    const API = "https://back-project-mywallet-ruda.herokuapp.com/sign-up";
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [token, setToken] = useState("");
-    const [password, setPassword] = useState("");
-    const [Cpassword, setCPassword] = useState("");
-    function handleSubmit(e) {
+    const [loading, setLoading] = useState(false);
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+        e_mail: '',
+        phone: '',
+        token: '',
+        password: '',
+        confirmPassword: ''
+    });
+
+    const handleSubmit = async (e) =>{
         e.preventDefault();
-        const register = {
-            email,
-            name,
-            phone,
-            token,
-            password,
-            Cpassword
-        };
-        const promise = axios.post(API, register);
-        promise.then(() => {
-            alert("Usuário cadastrado com sucesso!");
-            navigate("/");
-        });
-        promise.catch((err) => {
-            alert(err);
-        });
+        if (isEmpty(userInfo)) {
+            alert('info', 'Todos os campos devem ser preenchidos');
+            return;
+          }
+          setLoading(true);
+          try {
+            await signUpRequest(userInfo);
+            navigate('../');
+          } catch (err) {
+            console.log(err);
+            const { status } = err.response;
+            if (status === 409) {
+              return alert('error', 'The user is already registered!');
+            }
+            alert('error', 'An error has occurred!', err.response.data);
+          } finally {
+            setLoading(false);
+          }
     }
+    const handleChange = (e) => {
+        setUserInfo((info) => {
+          return {
+            ...info,
+            [e.target.name]: e.target.value,
+          };
+        });
+      };
+    
     return (
         <StyledCadastro>
+             {loading === false ?
+             <Page>
             <form onSubmit={handleSubmit}>
                 <Logo onClick={() => navigate('/')} ><img src={logo} alt="logo" /></Logo>
-                <input type="name" placeholder="Nome " onChange={(e) => setName(e.target.value)} />
-                <input type="email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} />
-                <input type="telefone" placeholder="Telefone" onChange={(e) => setPhone(e.target.value)} />
-                <input type="token" placeholder="Token" onChange={(e) => setToken(e.target.value)} />
-                <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
-                <input type="password" placeholder="Confirme a senha" onChange={(e) => setCPassword(e.target.value)} />
+                <input  placeholder="Nome" name="name" onChange={(e) => handleChange(e)} />
+                <input  placeholder="E-mail" name="e_mail" onChange={(e) => handleChange(e)} />
+                <input  placeholder="Telefone" name="phone" onChange={(e) => handleChange(e)} />
+                <input  placeholder="Token" name="token" onChange={(e) => handleChange(e)} />
+                <input  type="password" placeholder="Senha" name="password" onChange={(e) => handleChange(e)} />
+                <input  type="password" placeholder="Confirme sua senha" name="confirmPassword" onChange={(e) => handleChange(e)} />
                 <button type="submit">CADASTRAR</button>
             </form>
             <Link to="/login">
                 <Linkto> Já tem uma conta? Faça login!</Linkto>
             </Link>
+            </Page>:
+            <Loading />} 
         </StyledCadastro>
     )
 };
@@ -67,6 +88,12 @@ text-decoration: none !important;
     text-decoration: none !important;
     box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
     }
+`;
+
+const Page = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 
