@@ -29,6 +29,7 @@ export default function SignUp() {
           try {
             await signUpRequest(userInfo);
             navigate('../');
+            alert('success', 'You are registered on Volunteer!');
           } catch (err) {
             console.log(err);
             const { status } = err.response;
