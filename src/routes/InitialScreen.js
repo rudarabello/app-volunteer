@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -18,7 +19,7 @@ const Home = () => {
                     Volunteer te ajuda a organizar seu time de voluntários!
                 </p>
                 <p>
-                    Faça sua conta clicando aqui e aproveite!
+                Faça sua conta clicando<Link to="/sign-up"><Linkto>AQUI</Linkto></Link> e aproveite!
                 </p>
             </TextB>
             <Footer />
@@ -26,6 +27,21 @@ const Home = () => {
     )
 }
 export default Home
+
+const Linkto = styled.div`
+margin-top: 8px;
+color: #000000;
+font-size: 14px;
+font-family: "Roboto";
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+:hover {
+    cursor: pointer;
+    text-decoration: none !important;
+    }
+`;
 
 const Container = styled.div`
     width: 100%;
@@ -66,6 +82,11 @@ const TextB = styled.div`
     margin-top: 10px;
     margin-bottom: 1.8em;
     color: #140014;
-    
+    }
+    p :last-child{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     }
 `;
