@@ -1,4 +1,3 @@
-import React from 'react';
 import Favicon from 'react-favicon';
 
 export default function Fav() {

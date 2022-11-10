@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Github from '../assets/1.png';
 import Linkedin from '../assets/2.png';
