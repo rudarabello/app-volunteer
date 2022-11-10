@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Fav from './components/Favicon';
 import Hel from './components/Helmet';
 import Context from './contexts/Context';
+import { HandleRoute } from './routes/HandleRoutes';
 
 export default function App() {
     const [data, setData] = useState([{}]);
@@ -10,7 +11,9 @@ export default function App() {
         <Context.Provider value={{ data, setData }}>
             <Fav />
             <Hel />
-            <BrowserRouter></BrowserRouter>
+            <BrowserRouter>
+                <HandleRoute />
+            </BrowserRouter>
         </Context.Provider>
     );
 }
