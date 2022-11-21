@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import * as style from './style';
 import axios from 'axios';
 import Context from '../contexts/Context';
 import logo from '../assets/LogoV.png';
@@ -51,12 +51,12 @@ export default function Login() {
     }
     setTimeout(() => setLoading(true), 1000);
     return (
-        <StyledLogin>
+        <style.StyledLogin>
             {loading === true ? (
-                <Page>
+                <style.Page>
                     <img onClick={() => navigate('/')} src={logo} alt="Logo My Wallet" />
                     <form onSubmit={handleLogin}>
-                        <Input
+                        <style.Input
                             onChange={(e) => {
                                 setEmail(e.target.value);
                             }}
@@ -66,7 +66,7 @@ export default function Login() {
                             required
                             autoComplete="email"
                         />
-                        <Input
+                        <style.Input
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
@@ -76,104 +76,15 @@ export default function Login() {
                             required
                             autoComplete="password"
                         />
-                        <FormButton type="submit">ENTRAR</FormButton>
+                        <style.FormButton type="submit">ENTRAR</style.FormButton>
                     </form>
                     <Link to="/sign-up">
-                        <Linkto>Primeira vez? Cadastre-se!</Linkto>
+                        <style.Linkto>Primeira vez? Cadastre-se!</style.Linkto>
                     </Link>
-                </Page>
+                </style.Page>
             ) : (
                 <Loading />
             )}
-        </StyledLogin>
+        </style.StyledLogin>
     );
 }
-
-const Linkto = styled.div`
-    margin-top: 8px;
-    color: #000000;
-    font-size: 14px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    :hover {
-        cursor: pointer;
-        text-decoration: none !important;
-        box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
-    }
-`;
-
-const StyledLogin = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: #ebf5fe;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    img {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-`;
-const Page = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 240px;
-    form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin-bottom: 25px;
-    }
-    img {
-        :hover {
-            cursor: pointer;
-            text-decoration: none !important;
-            box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
-        }
-    }
-`;
-
-const Input = styled.input`
-    width: 100%;
-    height: 45px;
-    background: white;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-    box-sizing: border-box;
-    padding: 11px;
-    margin-top: 20px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: #7e7e7e;
-`;
-
-const FormButton = styled.button`
-    width: 100%;
-    height: 45px;
-    border: none;
-    background: #0a47e0;
-    border-radius: 8px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
-    margin-top: 20px;
-    :hover {
-        cursor: pointer;
-        text-decoration: none !important;
-        box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
-    }
-`;

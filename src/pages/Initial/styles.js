@@ -1,34 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import VLogoComplete from '../assets/VLogoComplete.png';
 
-const Home = () => {
-    return (
-        <Container>
-            <Header />
-            <TextA>
-                <h1>Seja bem-vindo!</h1>
-            </TextA>
-            <TextB>
-                <img src={VLogoComplete} alt="VLogo" width={300}></img>
-                <p>Volunteer te ajuda a organizar seu time de voluntários!</p>
-                <p>
-                    Faça sua conta clicando
-                    <Link to="/sign-up">
-                        <Linkto>AQUI</Linkto>
-                    </Link>{' '}
-                    e aproveite!
-                </p>
-            </TextB>
-            <Footer />
-        </Container>
-    );
-};
-export default Home;
-
-const Linkto = styled.div`
+export const Linkto = styled.div`
     margin-top: 8px;
     color: #000000;
     font-size: 14px;
@@ -43,7 +15,7 @@ const Linkto = styled.div`
     }
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
     width: 100%;
     height: 100vh;
     background-color: #ebf5fe;
@@ -51,7 +23,7 @@ const Container = styled.div`
     gap: 40px;
 `;
 
-const TextA = styled.div`
+export const TextA = styled.div`
     z-index: 1;
     max-width: 330px;
     margin-top: 25px;
@@ -63,7 +35,7 @@ const TextA = styled.div`
     font-style: normal;
 `;
 
-const TextB = styled.div`
+export const TextB = styled.div`
     margin-top: 10px;
     width: 100%;
     text-align: center;
