@@ -2,9 +2,9 @@ import { useContext, useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as style from './style';
 import axios from 'axios';
-import Context from '../contexts/Context';
-import logo from '../assets/LogoV.png';
-import Loading from '../components/Loading';
+import Context from '../../contexts/Context';
+import logo from '../../assets/LogoV.png';
+import Loading from '../../components/Loading';
 
 export default function Login() {
     const [loading, setLoading] = useState(false);

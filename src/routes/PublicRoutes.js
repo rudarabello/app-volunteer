@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import InitialScreen from '../pages/InitialScreen';
+import InitialScreen from '../pages/Initial';
 import Login from '../pages/Login';
-import SignUp from '../pages/SignUp.js';
+import SignUp from '../pages/SignUp';
 
 export const PublicRoutes = () => (
     <Routes>
