@@ -1,21 +1,5 @@
 import styled from 'styled-components';
 
-export const Linkto = styled.div`
-    margin-top: 8px;
-    color: #000000;
-    font-size: 14px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    :hover {
-        cursor: pointer;
-        text-decoration: none !important;
-        box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
-    }
-`;
-
 export const StyledLogin = styled.div`
     width: 100%;
     height: 100vh;
@@ -28,14 +12,29 @@ export const StyledLogin = styled.div`
     img {
         width: 100%;
         height: 100%;
-        margin-bottom: 20px;
     }
+`;
+export const Container = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100vh;
+    background-color: #ebf5fe;
+    flex-direction: row;
+`;
+export const MiniContainer = styled.div`
+    min-width: 300px;
+    align-items: center;
+    background-color: #ebf5fe;
+    flex-direction: column;
+    margin: 40px;
+    max-height: 40%;
 `;
 export const Page = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 240px;
+    max-width: 300px;
     form {
         width: 100%;
         display: flex;
@@ -82,6 +81,22 @@ export const FormButton = styled.button`
     line-height: 16px;
     color: #ffffff;
     margin-top: 20px;
+    :hover {
+        cursor: pointer;
+        text-decoration: none !important;
+        box-shadow: 0px 0px 10px rgba(000, 000, 999, 0.1);
+    }
+`;
+export const Linkto = styled.div`
+    margin-top: 8px;
+    text-align: center;
+    color: #000000;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
     :hover {
         cursor: pointer;
         text-decoration: none !important;
