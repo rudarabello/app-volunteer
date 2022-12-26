@@ -16,6 +16,7 @@ export const Linkto = styled.div`
 `;
 
 export const Container = styled.div`
+    display: flex;
     width: 100%;
     height: 100vh;
     background-color: #ebf5fe;
