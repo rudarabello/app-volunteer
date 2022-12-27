@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useRef } from 'react';
+import { useContext, useState, useEffect, } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as style from './style';
 import { alert } from '../../helpers/alert';
@@ -17,17 +17,13 @@ export default function Login() {
     const localUser = localStorage.getItem('user');
     const navigate = useNavigate();
     const { setData } = useContext(Context);
-    const tempAxiosFunction = useRef();
-    const axiosFunction = () => {
+
+    useEffect(() => {
         if (localUser) {
             const localUserParse = JSON.parse(localUser);
             setEmail(localUserParse.email);
             setPassword(localUserParse.password);
         }
-    };
-    tempAxiosFunction.current = axiosFunction;
-    useEffect(() => {
-        tempAxiosFunction.current();
     }, []);
 
     const handleLogin = async (e) => {
@@ -42,7 +38,6 @@ export default function Login() {
         }
         setLoading(true);
         try {
-            console.log('aqui');
             const {data} = await signInRequest(user);
             console.log(data);
             setData(data);
