@@ -5,7 +5,7 @@ import Hel from './components/Helmet';
 import Context from './contexts/Context';
 import { HandleRoute } from './routes/HandleRoutes';
 
-export default function App() {
+export function App() {
     const [data, setData] = useState([{}]);
     return (
         <Context.Provider value={{ data, setData }}>
