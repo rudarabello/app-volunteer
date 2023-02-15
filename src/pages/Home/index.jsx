@@ -17,8 +17,6 @@ export default function Home() {
     const [operations, setOperations] = useState([]);
     const [total, setTotal] = useState();
     const navigate = useNavigate();
-    const tempAxiosFunction = useRef();
-    const ApiGet = `https://back-project-mywallet-ruda.herokuapp.com/wallet`;
     const axiosFunction = () => {
         const config = { headers: { Authorization: `Bearer ${data.token}` } };
         const promise = axios.get(ApiGet, config);
