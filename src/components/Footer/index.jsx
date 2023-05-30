@@ -1,6 +1,6 @@
-import Github from '../assets/1.png';
-import Linkedin from '../assets/2.png';
-import Twitter from '../assets/3.png';
+import Github from '../../assets/1.png';
+import Linkedin from '../../assets/2.png';
+import Twitter from '../../assets/3.png';
 import { Contact, Container, CopyRights } from './styles';
 
 export const Footer = () => {

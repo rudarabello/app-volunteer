@@ -1,11 +1,11 @@
-import logo from '../../assets/LogoV.png';
-import { Link, useNavigate } from 'react-router-dom';
-import * as style from './style';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../assets/LogoV.png';
+import { Loading } from '../../components/Loading';
+import { alert } from '../../helpers/alert';
 import { signUpRequest } from '../../services/apiRequests';
 import { isEmpty } from '../../utils/isEmpty';
-import { alert } from '../../helpers/alert';
-import Loading from '../../components/Loading';
+import * as style from './style';
 
 export default function SignUp() {
     const navigate = useNavigate();

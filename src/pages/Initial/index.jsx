@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import VLogoComplete from '../../assets/VLogoComplete.png';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
 import * as style from './styles';
 
 const Home = () => {
