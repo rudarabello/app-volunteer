@@ -1,6 +1,10 @@
-import './styles/reset.css';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { App } from './App';
-
-const root = createRoot(document.getElementById('root')); // createRoot(container!) if you use TypeScript
-root.render(<App />);
+import './styles/reset.css';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
