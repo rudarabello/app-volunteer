@@ -1,19 +1,6 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 
-function Header() {
-    const navigate = useNavigate();
-    return (
-        <Container>
-            <button onClick={() => navigate('/sign-up')}>Cadastre-se</button>
-            <button onClick={() => navigate('/login')}>Entrar</button>
-        </Container>
-    );
-}
-
-export default Header;
-
-const Container = styled.div`
+export const Container = styled.div`
     z-index: 2;
     align-items: center;
     display: flex;

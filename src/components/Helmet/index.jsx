@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-export default function Hel() {
+export const Hel = () => {
     return (
         <div>
             <Helmet>
@@ -8,4 +8,4 @@ export default function Hel() {
             </Helmet>
         </div>
     );
-}
+};

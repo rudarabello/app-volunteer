@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import * as style from './styles';
+import VLogoComplete from '../../assets/VLogoComplete.png';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import VLogoComplete from '../../assets/VLogoComplete.png';
+import * as style from './styles';
 
 const Home = () => {
     return (
